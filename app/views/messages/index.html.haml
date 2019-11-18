@@ -1,0 +1,56 @@
+.side
+  .header
+    %h3.header__name
+      = current_user.name
+    %ul.header__lists
+      %li.list
+        = link_to new_group_path do
+          = icon("fas", "edit")
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = icon("fas", "cog")
+
+  .side__groups
+    - current_user.groups.each do |group|
+      .side__groups__group
+        = link_to group_messages_path(group) do
+          .group__group-name 
+            = group.name
+          .group__latest-message
+            = group.show_last_message
+.chat
+  .header
+    .header-left
+      .header-left__title
+        =@group.name
+      %ul.header-left__members
+        Member：
+        %li.member
+          - @group.users.each do |user|
+            = user.name
+    .header-right
+      .header-right__button
+        = link_to 'Edit', 'edit'
+  .messages
+    .message
+      .up-message
+        .up-message__name
+          名前
+        .up-message__date
+          2019/11/12/
+      .text-message
+        .text-message__comment
+          おはよう
+
+  .messages
+  = render partial: 'message', collection: @messages
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__icon
+        = f.label :image, class: 'form__icon__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'diving'
+      = f.submit 'Send', class: 'form__submit'
+
