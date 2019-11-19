@@ -32,18 +32,8 @@
       .header-right__button
         = link_to 'Edit', 'edit'
   .messages
-    .message
-      .up-message
-        .up-message__name
-          名前
-        .up-message__date
-          2019/11/12/
-      .text-message
-        .text-message__comment
-          おはよう
-
-  .messages
-  = render partial: 'message', collection: @messages
+    = render partial: 'message', collection: @messages
+   
 
   .form
     = form_for [@group, @message] do |f|
