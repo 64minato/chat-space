@@ -1,9 +1,9 @@
-.message
+.message{"data-message-id": "#{message.id}"}
   .up-message
     .up-message__name
       = message.user.name
     .up-message__date
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .text-message
     - if message.content.present?
       %p.text-message__comment
