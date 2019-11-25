@@ -16,16 +16,13 @@
     &__lists {
       display: inline-block;
       float: right;
-      color: white;
       .list {
         display: inline-block;
-        color: white;
       }
       .icon {
         color: white;
         font-size: 16px;
       }
-      
     }
   }
 
@@ -36,12 +33,17 @@
     padding: 20px 20px 0;
     &__group {
       margin-bottom: 40px;
-      &__group-name {
+      &-name {
         font-size: 15px;
         margin-bottom: 5px;
+        color: white;
       }
       &__latest-message {
         font-size: 11px;
+        color: white;
+      }
+      a {
+        text-decoration: none;
       }
     }
   }

@@ -23,7 +23,7 @@
         }
       }
     }
-    .header-right {
+    .header-right a{
       border: 1px solid #38aef0;
       color: #38aef0;
       float: right;
@@ -31,6 +31,7 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      text-decoration: none;
     }
   }
   .messages {

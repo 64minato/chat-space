@@ -4,11 +4,11 @@
     %meta{ content: "text/html; charset=UTF-8", "http-equiv": "Content-Type" }/
     %title ChatSpace
     = csrf_meta_tags
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
+    -# %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    -# = stylesheet_link_tag    'application', media: 'all'
-    -# = javascript_include_tag 'application'
   %body
     = render 'layouts/notifications'
     = yield
+-# = stylesheet_link_tag    'application', media: 'all'
+-# = javascript_include_tag 'application'
